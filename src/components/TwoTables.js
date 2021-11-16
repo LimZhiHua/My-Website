@@ -1,6 +1,5 @@
 import React from 'react';
 import "../App.css"
-import { LinkButton } from './LinkButton';
 import Grid from '@material-ui/core/Grid';
 import "./TwoTables.css"
 

@@ -128,38 +128,6 @@ export const generateKeyPair = async (  )=> {
         aesKey: arrayBufferToBase64(encAES), 
       }
 
-      /*
-      //-- lets see if we can figure out decryption too lol.
-      console.log("private key is", privateKey)
-      const privKey = await  getPrivateKey(privateKey)
-      console.log("priv key is", privKey)
-      // first, we decrypt the AES key.
-      let decAES = await window.crypto.subtle.decrypt({name: 'RSA-OAEP'},  privKey, encAES).catch( (err) => {
-        return Promise.reject(`Something went wrong when trying to decrypt the AES key for file ${file.name}`)
-      });
-      console.log("dec aes is", decAES)
-      console.log("key encoded is", key_encoded)
-      // then we decrypt the file data
-      const decryptedArr = await window.crypto.subtle.decrypt(
-        {
-          name: "AES-GCM",
-          iv:iv,
-          length: 128
-        },
-        key_encoded,  //-----------we gotta change this to decAES later lol
-        encryptedArr
-      ).catch( (err) => {
-        console.log(err)
-        return Promise.reject(`Something went wrong when trying to decrypt ${file.name}`)
-      });
-      
-      const item2 = {
-        fileName:file.name,
-        fileData: Buffer.from(decryptedArr),
-        iv: arrayBufferToBase64(iv),
-        aesKey: arrayBufferToBase64(encAES), 
-      }
-*/
 
 
       return item

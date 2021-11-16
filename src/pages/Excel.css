@@ -1,0 +1,19 @@
+.screenshot{
+    height: 100%;
+    width: 100%;
+}
+
+.btn-download{
+    background-color: grey;
+    color:gray;
+    border: 1px solid 
+}
+
+.href-btn{
+    color: black;
+    text-decoration: none; /* no underline */
+}
+
+.link {
+    color: red
+  }

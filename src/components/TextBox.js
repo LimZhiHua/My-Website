@@ -16,7 +16,7 @@ function Textbox(props) {
         <span>
             <h1 className="subheading">{props.title}</h1>
             <br></br>
-            <TextField  value={props.value} multiline maxRows={props.maxRows} minRows={props.minRows || 0} className={styles.textBox} id="outlined-basic" label={props.label} variant="outlined" />
+            <TextField onChange={props.onChange} value={props.value} multiline maxRows={props.maxRows} minRows={props.minRows || 0} className={styles.textBox}  label={props.label} variant="outlined" />
         </span>
     )
 
