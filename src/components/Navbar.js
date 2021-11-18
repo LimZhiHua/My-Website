@@ -33,7 +33,7 @@ function Navbar(){
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                        Lim Zhi Hua's Website  <i className="fas fa-ellipsis-h"></i>
+                        Lim Zhi Hua's Website 
                     </Link>
                     <div className= "menu-icon" onClick={handleClick}>
                         < i className={click ? "fa fa-times": "fas fa-bars"}/>
@@ -45,22 +45,21 @@ function Navbar(){
                             </Link>                       
                         </li>
                         <li className="nav-item">
-                            <Link to="/AboutMe" className="nav-links" onClick={closeMobileMenu}>
-                                About Me!
+                            <Link to="/Resume" className="nav-links" onClick={closeMobileMenu}>
+                                Resume
+                            </Link>                       
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/Excel" className="nav-links" onClick={closeMobileMenu}>
+                                Skills
                             </Link>                       
                         </li>
                         <li className="nav-item">
                             <Link to="/Technologies" className="nav-links" onClick={closeMobileMenu}>
-                                Technologies
-                            </Link>                       
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
-                                Signup
+                                Contact Details
                             </Link>                       
                         </li>
                     </ul>
-                    {button && <LinkButton buttonStyle="btn--outline"> SIGNUP</LinkButton>}
                 </div>
             </nav>
         </>

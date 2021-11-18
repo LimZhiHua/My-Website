@@ -16,7 +16,7 @@ const Right = ()=>{
   return(
     <>
       <h1 className="header"> About Me!</h1>
-      <p>My name is Lim Zhi Hua, but for those who don't speak Chinese, you can just call me Jacob</p>
+      <p>My name is Lim Zhi Hua,</p>
       <p>Ahhhh, i hate talking about myself. this is so hard </p>
     </>
   ) 

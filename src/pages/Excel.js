@@ -26,7 +26,7 @@ function Excel() {
               <p> While I did create many "normal" macros to automate more conventional tasks such as processing data or sending emails, I also had the opportunity to create a few simple games in VBA</p>
               <br/>
               <p> One of the tasks assigned to me was to "gamify" the learning experience for some training data. To accomplish this goal, I created educational games which could be played by anyone with Microsoft Excel</p>
-              <p> Some examples of this can be seen on the right.</p>
+              <p> Some examples of this can be seen and downloaded on the right.</p>
       
               <br/>
       
@@ -54,9 +54,8 @@ function Excel() {
 
           const Snake =(
               <>
-                    <h1 className="header">Snake</h1> 
                     <div className="text">
-                    <h1 className="subheader">Description:</h1>
+                    <h1 className="subheader">Snake</h1>
                     <p>One of the first non-trivial macros I created. In this modified snake game, players are asked a question and need to guide the snake to the correct answer </p>
                     <p>Questions can be easily customizable without any programming language, and can be both simple text or pictures.</p>
                     <img src ={SnakeImg} className="screenshot" alt="Snake" />
@@ -83,18 +82,30 @@ function Excel() {
                     </div>
                     <div style={{justifyContent: "center", justifySelf:"center", display:"flex"}}>
                     <Button variant="contained"><a style={{ "text-decoration":"none", color: '#000' }} href={ExcelCrossword} download>Click to Download!</a></Button>
-                    </div>
+                </div>
                     <h1 className="footer"><i class="fas fa-arrow-left"/>Swipe to See More!<i class="fas fa-arrow-right"></i> </h1>
                     <br/>  
             </>
         )
         const Other = (
+            <>
                 <div className="text">
-                    <h1 className="subheader">Other:</h1>
-                    <p> </p>
-            
+                    <h1 className="subheader">Other</h1>
+                    <p>Throughout my internships, I of course, created more "normal" macros to automate tasks.
+                       However, as the tasks performed by these macros were used to process confidential data, they are not available for download</p>           
                     <br/>
-          </div>
+                    <p>Tasks Include:</p>
+                    <ul className="circle">
+                      <li>Automating the sending of personalized emails in Microsoft Outlook</li>
+                      <li>Creating a form that would automatically generate a PowerPoint presentation when provided certain data</li>
+                      <li>Automating the processing of financial stocks using VBA, reducing 1 month’s worth of manual work to less than 3 hours</li>
+                      <li>Automatically processing data submiited from a Microsoft Form to be used by other programs</li>
+                      <li>Parsing Excel data into a CSV for a Python program to read</li>
+                      <br></br>
+                    </ul>
+                </div>
+                  <h1 className="footer"><i class="fas fa-arrow-left"/>Swipe to See More!</h1>
+            </>
         )
         const slides = [
             {

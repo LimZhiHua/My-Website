@@ -21,6 +21,7 @@
   font-weight: bold;
   font-size: 30px;
   padding-top: 25px;
+  padding-left: 10px;
 }
 
 .subheader{
@@ -64,3 +65,13 @@ right: 0;
 text-align: center;
 }
 
+ul.circle {
+  list-style-type: circle;
+  display: list-item;
+  margin-left: 20px;
+}
+
+.screenshot{
+  height: 100%;
+  width: 100%;
+}
