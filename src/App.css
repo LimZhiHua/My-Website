@@ -40,6 +40,10 @@
   line-height: 150%;
 }
 
+.text p{
+  margin-bottom: 5px;
+}
+
 .hyperlink {
   color: black;
   display: flex;
