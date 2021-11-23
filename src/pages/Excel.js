@@ -58,7 +58,7 @@ function Excel() {
                     <h1 className="subheader">Snake</h1>
                     <p>One of the first non-trivial macros I created. In this modified snake game, players are asked a question and need to guide the snake to the correct answer </p>
                     <p>Questions can be easily customizable without any programming language, and can be both simple text or pictures.</p>
-                    <img src ={SnakeImg} className="screenshot" alt="Snake" />
+                    <img src ={SnakeImg} draggable="false" className="screenshot" alt="Snake" />
                     </div>
 
                     <div style={{justifyContent: "center", justifySelf:"center", display:"flex"}}>

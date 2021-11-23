@@ -72,6 +72,23 @@ ul.circle {
 }
 
 .screenshot{
-  height: 100%;
-  width: 100%;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+  display: block;
+}
+
+.horizontalBlock{
+  background: gray;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  z-index: 999;
 }

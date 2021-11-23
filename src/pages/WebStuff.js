@@ -3,7 +3,7 @@ import TwoTables from '../components/TwoTables';
 import "../App.css"
 import TechnologiesRoutes from '../components/TechnologiesRoutes';
 import Swiper from '../components/Swiper';
-
+import SportcredPic from "../images/Sportcred.png"
 const Left = ()=>{  
     return(
       <>
@@ -56,10 +56,13 @@ const Left = ()=>{
             <h1 className="header">Projects</h1>
             <div className="text">
                 <h1 className="subheader">Sportcred</h1>
-                <p> During my studies, one of the courses involved going through the Agile software development lifecycle to create prototypes for real life clients. After the course was completed, the clients were so satisfied with our initial product that they asked if we could continue working on it.</p>
+                <p> During my studies, one of the courses involved going through the Agile software development lifecycle to create prototypes for real life clients. After the course was completed, the clients asked if we could continue working on it.</p>
                 <br/>
                 <p> My team members and I decided to create a working prototype located here: <a href="https://sportcred-staging.herokuapp.com/">https://sportcred-staging.herokuapp.com/</a> </p>
                 <p> I have also created a copy of the source code located here: <a href="https://github.com/LimZhiHua/Sportcred">https://github.com/LimZhiHua/Sportcred</a></p>
+
+                <img src ={SportcredPic} className="screenshot" alt="Snake" />
+
             </div>
         </>
     )

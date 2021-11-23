@@ -7,6 +7,7 @@ import EncryptionPage from './pages/Encryption';
 import Excel from './pages/Excel';
 import Web from './pages/WebStuff';
 import Resume from './pages/Resume';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route exact path='/Excel'  element={<Excel/>}/>
           <Route exact path='/Web'  element={<Web/>}/>
           <Route exact path='/Resume'  element={<Resume/>}/>
+          <Route exact path='/Contact'  element={<Contact/>}/>
 
 
         </Routes>
