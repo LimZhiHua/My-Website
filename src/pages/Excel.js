@@ -42,12 +42,12 @@ function Excel() {
                     <p>One of the first non-trivial macros I created. In this modified snake game, players are asked a question and need to guide the snake to the correct answer </p>
                     <p>Questions can be easily customizable without any programming language, and can be both simple text or pictures.</p>
                     <img src ={SnakeImg} draggable="false" className="screenshot" alt="Snake" />
+                      <div className="centerButtonContainer">
+                      <Button variant="contained"><a style={{ "text-decoration":"none", color: '#000' }} href={ExcelSnake} download>Click to Download!</a></Button>
+                      </div>
+                    <br/>
                     </div>
 
-                    <div className="centerButtonContainer">
-                    <Button variant="contained"><a style={{ "text-decoration":"none", color: '#000' }} href={ExcelSnake} download>Click to Download!</a></Button>
-                    </div>
-                    <br/>
             </>
           )
           }
@@ -63,10 +63,11 @@ function Excel() {
                     <p>Answers can be checked by pressing the "Check Answers" button on the left. Correct answers will be highlighted in green</p>
                     <br/>
                     <img src ={CrosswordImg} className="screenshot" alt="Crossword" />
-                    </div>
                     <div  className="centerButtonContainer">
                     <Button variant="contained"><a style={{ "text-decoration":"none", color: '#000' }} href={ExcelCrossword} download>Click to Download!</a></Button>
                 </div>  
+                </div>
+
             </>
         )}
         const Other =()=>{ 

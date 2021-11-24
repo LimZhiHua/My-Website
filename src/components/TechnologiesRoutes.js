@@ -7,10 +7,13 @@ function TechnologiesRoutes(props) {
 
     return(
       <>
-      <h1 className="header">Skills</h1>
-      <Link to="/Excel" className="hyperlink" >Excel VBA</Link> 
-      <Link to="/Encryption" className="hyperlink" >Encryption/Decryption</Link> 
-      <Link to="/Web" className="hyperlink" >Web Development</Link>   
+      <div className="text">
+      <h2 className="header">Skills</h2>
+        <Link to="/Excel" className="hyperlink" >Excel VBA</Link> 
+        <Link to="/Encryption" className="hyperlink" >Encryption/Decryption</Link> 
+        <Link to="/Web" className="hyperlink" >Web Development</Link>   
+      </div>
+     
       </>
     )
 

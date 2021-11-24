@@ -41,7 +41,8 @@
   width: 80%;
   padding: 20px;
   display: inline-block;
-  
+  text-align: left;
+  justify-self: left;
 }
 
 .text h1{
@@ -56,12 +57,24 @@
   font-weight: bold;
   font-size: 25px;
   margin-bottom: 10px;
+  
 }
 
 .text p{
   margin-bottom: 15px;
   text-align: left;
   display: inline-block;
+  justify-self: left;
+
+}
+
+.text hyperlink {
+  color: black;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  width: 100vh;
 }
 
 .hyperlink {
@@ -71,7 +84,7 @@
   text-decoration: none;
   padding: 0.5rem 1rem;
   z-index: 2;
-
+  width: 100vh;
 }
 
 .hyperlink:hover {
@@ -120,8 +133,8 @@ ul.circle {
 .colouredHorizontalBlock0{
   background: #659DBD;
   min-height: 200px;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   vertical-align:middle;
   z-index: 2;
   display: grid;
@@ -130,8 +143,8 @@ ul.circle {
 .colouredHorizontalBlock1{
   background: #8D8741;
   min-height: 200px;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   vertical-align:middle;
   z-index: 2;
   display: grid;
@@ -141,8 +154,8 @@ ul.circle {
 .colouredHorizontalBlock2{
   background: #DaaD86;
   min-height: 200px;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   vertical-align:middle;
   z-index: 2;
   display: grid;
@@ -153,8 +166,8 @@ ul.circle {
 .colouredHorizontalBlock3{
   background: #BC986A;
   min-height: 200px;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   vertical-align:middle;
   z-index: 2;
   display: grid;
@@ -165,8 +178,8 @@ ul.circle {
 .colouredHorizontalBlock4{
   background: #FBEEC1;
   min-height: 200px;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   vertical-align:middle;
   z-index: 2;
   display: grid;
@@ -176,6 +189,8 @@ ul.circle {
 
 .centerButtonContainer{
   justify-content: center;
+  align-items: center;
+
   display: flex;
   padding-top: 10px;
 }
