@@ -33,7 +33,6 @@ export default function EncryptionPage() {
   const Left = ()=>{
     return(
       <>
-        <TechnologiesRoutes/>
         <div className="text">
         <h1 className="subheader">Description:</h1>
         <p> During my time as a Full Stack Developer at the University of Scarborough, I was tasked with implementing file encryption/decryption</p>
@@ -286,9 +285,14 @@ export default function EncryptionPage() {
     setEncAES(event.target.value)
   }
     return (
-      <div > 
+      <> 
+        <div className="colouredHorizontalBlock0">
+          <TechnologiesRoutes/>
+        </div>
+        <div className="colouredHorizontalBlock4">
         <TwoTables key="encryptionPage"left={<Left key="encryptionLeft"/>} right={<Right key="encryptionRight"/>} ></TwoTables>
         </div>
+        </>
     );
 
 

@@ -15,8 +15,8 @@ const Left = ()=>{
 const Right = ()=>{
   return(
     <>
-      <h1 className="header"> About Me</h1>
       <div className="text">
+        <h1 className="header"> About Me</h1>
         <p>Hi, I'm Zhi Hua, but for those who don't speak Chinese, you can just call me Jacob.</p>
         <p>I recently graduated with an Honours, Bachelors of Science from the University of Toronto, majoring in both Computer Science and Economics.</p>
         <p>In my free time, I enjoy teaching myself interesting, (albeit mostly useless), skills such as unicycling, juggling, or writing with both hands.</p>
