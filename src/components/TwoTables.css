@@ -2,28 +2,25 @@
     border-style: "solid";
     border-width: medium;
     z-index: 1;
-        height: auto;    
     width: auto;
     vertical-align: top;
+    padding: 10px
 }
 
 .right{
     border-style: "solid";
     border-color: black;
-    background-color: white;
     border-width: medium;
     z-index: 1;
-    height: auto;    
     width: auto;
+    padding: 10px
 }
 
 .table{
     border-style: "solid";
     border-color: black;
-    background-color:white;
     border-width: medium;
     vertical-align: top;
-    height: 100%;    
     width: 100%;
     margin: 0;
     border: "1px solid grey";

@@ -3,11 +3,9 @@ import "../App.css"
 import Grid from '@material-ui/core/Grid';
 import "./TwoTables.css"
 
-//import video from "/videos/video-2.mp4"
 function TwoTables(props) {
   return (
-    <div className='hero-container'> 
-      <Grid container spacing={2} className="table" >
+      <Grid container spacing={0} className="table" >
           <Grid item xs={6} className="left" >
           {props.left}
           </Grid>
@@ -15,7 +13,6 @@ function TwoTables(props) {
           {props.right}
         </Grid>
       </Grid>
-      </div>
   );
 }
 

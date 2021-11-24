@@ -13,14 +13,12 @@ import CrosswordImg from "../images/Crossword.png"
 import ExcelCrossword from "../files/Crossword.xlsm"
 
 function Excel() {
-    const [index, setIndex] = useState()
 
-    const Left = ()=>{
+    const IntroExcel = ()=>{
         return(
           <>
-            <TechnologiesRoutes/>
               <div className="text">
-              <h1 className="subheader">Description:</h1> 
+              <h1 className="subheader">Microsoft Excel and VBA</h1> 
               <p> During my time at Schneider Electric as a Data Analyst/IT Intern, I had the chance to teach myself Visual Basics for Applications (VBA), a programming language that can easily interact with Microsoft products such as Excel, Access, or Outlook </p>
               <br/>
               <p> While I did create many "normal" macros to automate more conventional tasks such as processing data or sending emails, I also had the opportunity to create a few simple games in VBA</p>
@@ -35,24 +33,9 @@ function Excel() {
         ) 
       }
       
-      // These styles are just for the slider.
-    
-      const Right = ()=>{
 
-        const swiperStyles = {slide: {
-            height: "100vh",
-          },
-          slide1: {
-            background: '#FEA900',
-          },
-          slide2: {
-            background: '#B3DC4A',
-          },
-          slide3: {
-            background: '#6AC0FF',
-          },}
-
-          const Snake =(
+          const Snake = ()=>{
+            return (
               <>
                     <div className="text">
                     <h1 className="subheader">Snake</h1>
@@ -61,16 +44,17 @@ function Excel() {
                     <img src ={SnakeImg} draggable="false" className="screenshot" alt="Snake" />
                     </div>
 
-                    <div style={{justifyContent: "center", justifySelf:"center", display:"flex"}}>
+                    <div className="centerButtonContainer">
                     <Button variant="contained"><a style={{ "text-decoration":"none", color: '#000' }} href={ExcelSnake} download>Click to Download!</a></Button>
                     </div>
-
-                    <h1 className="footer">Swipe to See More!<i class="fas fa-arrow-right"></i> </h1>
                     <br/>
             </>
           )
+          }
+         
 
-        const Crossword =(
+        const Crossword = () =>{ 
+          return(
           <>
                 <div className="text">
                     <h1 className="subheader">Crossword</h1>
@@ -80,14 +64,13 @@ function Excel() {
                     <br/>
                     <img src ={CrosswordImg} className="screenshot" alt="Crossword" />
                     </div>
-                    <div style={{justifyContent: "center", justifySelf:"center", display:"flex"}}>
+                    <div  className="centerButtonContainer">
                     <Button variant="contained"><a style={{ "text-decoration":"none", color: '#000' }} href={ExcelCrossword} download>Click to Download!</a></Button>
-                </div>
-                    <h1 className="footer"><i class="fas fa-arrow-left"/>Swipe to See More!<i class="fas fa-arrow-right"></i> </h1>
-                    <br/>  
+                </div>  
             </>
-        )
-        const Other = (
+        )}
+        const Other =()=>{ 
+          return(
             <>
                 <div className="text">
                     <h1 className="subheader">Other</h1>
@@ -104,36 +87,31 @@ function Excel() {
                       <br></br>
                     </ul>
                 </div>
-                  <h1 className="footer"><i class="fas fa-arrow-left"/>Swipe to See More!</h1>
             </>
-        )
-        const slides = [
-            {
-                value: Snake,
-                style: swiperStyles.slide1}, 
-            {
-                value:Crossword,
-                style: swiperStyles.slide2
-            },
-            {
-                value: Other,
-                style: swiperStyles.slide3
-            }]
+        )}
 
 
-        return(
-          <>
-             <Swiper styles={swiperStyles} slides={slides} />
-      
-          </>
-        ) 
-      }
       
 
     return (
-      <div className='hero-container'> 
-        <TwoTables left={<Left/>} right={<Right />}></TwoTables>
-        </div>
+        //<TwoTables left={<Left/>} right={<Right />}></TwoTables>
+        <>
+          <div className="colouredHorizontalBlock0">
+            <TechnologiesRoutes/>
+          </div>
+          <div className="colouredHorizontalBlock1">
+            <IntroExcel/>
+          </div>
+          <div className="colouredHorizontalBlock2">
+            <Snake/>
+          </div>
+          <div className="colouredHorizontalBlock3">
+            <Crossword/>
+          </div>
+          <div className="colouredHorizontalBlock4">
+            <Other/>
+          </div>
+        </>
     );
   }
 

@@ -15,9 +15,19 @@ const Left = ()=>{
 const Right = ()=>{
   return(
     <>
-      <h1 className="header"> About Me!</h1>
-      <p>My name is Lim Zhi Hua,</p>
-      <p>Ahhhh, i hate talking about myself. this is so hard </p>
+      <div className="text">
+        <h1 className="header"> About Me</h1>
+        <p>Hi, I'm Zhi Hua, but for those who don't speak Chinese, you can just call me Jacob.</p>
+        <p>I recently graduated with an Honours, Bachelors of Science from the University of Toronto, majoring in both Computer Science and Economics.</p>
+        <p>In my free time, I enjoy teaching myself interesting, (albeit mostly useless), skills such as unicycling, juggling, or writing with both hands.</p>
+
+        <p>I have some experince with website and database management, but I will learn whatever I need to do my job, no matter how obscure or seemingly useless it may be</p>
+
+
+
+
+      </div>
+
     </>
   ) 
 }
