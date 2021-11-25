@@ -186,6 +186,17 @@ ul.circle {
   padding: 20px;
 }
 
+.colouredHorizontalBlockFull4{
+  background: #FBEEC1;
+  min-height: 200px;
+  justify-content: left;
+  align-items: left;
+  vertical-align:middle;
+  z-index: 2;
+  display: grid;
+  padding: 20px;
+  height: calc(100vh - 80px);
+}
 
 .centerButtonContainer{
   justify-content: center;

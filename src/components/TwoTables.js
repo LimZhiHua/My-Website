@@ -6,10 +6,10 @@ import "./TwoTables.css"
 function TwoTables(props) {
   return (
       <Grid container spacing={0} className="table" >
-          <Grid item xs={6} className="left" >
+          <Grid item xs={12} sm={6} className="left" >
           {props.left}
           </Grid>
-          <Grid item xs={6} className="right">
+          <Grid item xs={12} sm={6} className="right">
           {props.right}
         </Grid>
       </Grid>

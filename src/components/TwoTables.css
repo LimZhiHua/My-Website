@@ -3,8 +3,9 @@
     border-width: medium;
     z-index: 1;
     width: auto;
-    vertical-align: top;
-    padding: 10px
+    display:grid;
+    min-height: max-content;
+
 }
 
 .right{
@@ -13,7 +14,8 @@
     border-width: medium;
     z-index: 1;
     width: auto;
-    padding: 10px
+    min-height: max-content;
+
 }
 
 .table{
@@ -24,4 +26,6 @@
     width: 100%;
     margin: 0;
     border: "1px solid grey";
+    display:grid;
+    
 }
