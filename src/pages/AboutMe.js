@@ -32,7 +32,11 @@ const Right = ()=>{
 function AboutMe() {
     return (
       <div> 
-        <TwoTables left={<Left/>} right={<Right/>}></TwoTables>
+        {//<TwoTables left={<Left/>} right={<Right/>}></TwoTables>
+        }
+        <div className="colouredHorizontalBlock0">
+            <Right/>
+      </div>
         </div>
     );
   }
