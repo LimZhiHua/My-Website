@@ -1,0 +1,13 @@
+
+.centerDisplay{
+    width: 80vw;
+  }
+
+.gridContainer{
+    align-items: stretch;
+}
+
+  .gridItem{
+      width: 100%;
+      height: 50px;
+  }
