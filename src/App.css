@@ -120,6 +120,7 @@ ul.circle {
   display: block;
 }
 
+
 .horizontalBlock{
   background: gray;
   height: 90vh;
@@ -128,6 +129,7 @@ ul.circle {
   vertical-align:middle;
   z-index: 2;
   display: grid;
+  overflow: auto;
 }
 
 .colouredHorizontalBlock0{
