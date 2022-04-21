@@ -13,8 +13,8 @@ function Testing() {
 
     const [testGet, setGet] = useState(null);
     const [curRow, setCurRow] = useState(0);
+    const [answer, setAnswer] = useState('pain');
     const usl  = baseURL +  "/testAPI"
-    
     const getAPI = async () => {
         const getURL = usl + '/getReq';
         console.log("getURl is", getURL)
@@ -50,39 +50,67 @@ function Testing() {
     // </div>         
 
     
-    const rows = 5;
-    const cols = 6
+    const rows = 7;
+    const cols = 4;
+    // 50 is just the size of each cell
+    const width = 50 * cols;
 
     // This just generates an array with equal size to the number of items
     const values = Array.from(Array(rows * cols).keys())
 
     const calculateDisabled = (index) => {
         // we disable him if he is not on our current row
-        // currentRow's indexes can be calculated by going:
+        // startInd tells me the 1st index of the row.
         const startInd = (curRow * cols)
-        return !( startInd <= index )&& ( index <= (startInd + cols))
+        return !((startInd <= index )&& ( index < (startInd + cols)))
     }
 
-    const nextRow = () => {
-        setCurRow(curRow + 1)
-        console.log("currow is", curRow)
+    const calculateSubmitted = (index) => {
+        // A grid item has been submitted if we have gone past his index.
+        const startRow = Math.floor(index / cols)
+        return startRow < curRow
     }
-    
+
+    //TODO: make this check f it is an acutal word
+    const checkWord = (input) => {
+        return true;
+    }
+
+    // When I press enter, I need to 
+    const nextRow = (e) => {
+        e.preventDefault();
+        if(checkWord){
+            setCurRow(curRow + 1)
+            console.log("currow is", curRow)
+        }
+        //e.preventDefault();
+
+    }
+
+    const reset = () => {
+        setCurRow(0)
+    }
+
     const gridItems = values.map(value => {
         return (
-            <Grid item xs={2}  className='gridItem'>
-                <CharacterTextField disabled={calculateDisabled(value)} value={value}/>
+            <Grid item xs={(12/cols)}  className='gridItem'>
+                <CharacterTextField disabled={calculateDisabled(value)} submitted={calculateSubmitted(value)} value={value} answer ={answer} index={value%cols}/>
             </Grid>
         )
     })
     return (
         <div className='horizontalBlock '> 
-        <div className='centerDisplay'>
-            <Grid container spacing={1} className='gridContainer'>
-                {gridItems}
-            </Grid>
-        </div>
-        <button onClick={nextRow}>this is a button</button>
+        <form>
+            <div style={{width: width + 'px'}}>
+                <Grid container spacing={1} className='gridContainer'>
+                    {gridItems}
+                </Grid>
+            </div>
+            <button onClick={nextRow}>this is a button</button>
+        </form>
+        <button onClick={reset}>reset button</button>
+        <p>{(curRow * cols)}</p>
+        <p>{(curRow * cols) + cols}</p>
         </div>     
     );
   }
