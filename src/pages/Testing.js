@@ -1,3 +1,13 @@
+/* TODO
+> Change background colouring logic from CharacterTextField.js to the parent
+> Generate a random answer
+> Save the answers in a cookie for a day
+> Allow for a custom number of columns
+> Allow for a custom word list
+> Change the name from Testing to Wordle or something
+
+*/
+
 import React, {useState, useEffect} from 'react';
 import "../App.css"
 import "./Testing.css"
@@ -26,7 +36,6 @@ function Testing() {
     const usl  = baseURL +  "/testAPI"
     
     
-    // using state cause eventually I intend
     const answer = "tired"
 
     const getAPI = async () => {
@@ -107,13 +116,6 @@ function Testing() {
             setCurRow(curRow + 1)
         }
     }
-
-    const reset = () => {
-        setCurRow(0)
-        setSuccess(false)
-        setValidWord(true)
-    }
-
  
     const generateWordSet = async () => {
         const response =await fetch(wordList);
