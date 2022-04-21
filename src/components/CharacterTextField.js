@@ -10,7 +10,11 @@ function CharacterTextField(props) {
     const [inputVal, setInputVal] = useState(null)
     const [disabled, setDisabled] = useState(props.disabled)
 
+
     const useStyles = makeStyles((theme) => ({
+        default: {
+            textAlign: 'center' 
+        },
         inputWhite: {
             background: '#FFFFFF',
             justifyContent: "center"
@@ -29,6 +33,9 @@ function CharacterTextField(props) {
         },
         uppercase: {
             textTransform: "uppercase"
+        },
+        normalBorder:{
+           border: "1px solid black"
         }
       }));
 
@@ -42,7 +49,6 @@ function CharacterTextField(props) {
 
     // G for green, Y for Yellow, W for grey (cause G is taken)
     const setBackground = () => {
-        //console.log("textfiledref is", inputVal())
         if (!submitted){
             return classes.in
         }else if(answer[index] === inputVal){
@@ -66,56 +72,42 @@ function CharacterTextField(props) {
             form.elements[index + 1].focus();
             e.preventDefault();
           }
+        
+    }
+
+    // onChange doesn't trigger if it is blank and you press backspace
+    const handleBackspace = (e)=> {
+        if (e.target.value.length <= 0 && index > 0 && e.keyCode === 8) {
+            const form = e.target.form;
+            const index = [...form].indexOf(e.target);
+            form.elements[index - 1].focus();
+            e.preventDefault();
+        }
     }
 
 
-    // if(index === 0){
-    //     const form = e.target.form;
-    //     form.elements[index].focus();
-    // }
-    // useEffect(() => {
-    //     if(elementRef && elementRef.current){
-    //         console.log("this is being run")
-    //         if(index === 0){
-    //             elementRef.current.focus();
-    //         }
-    //     }
-    //   }, [props.disabled, index]);
-
-
-    useEffect(() => {
-        setDisabled(props.disabled)
-        console.log("setting disabled???", props.disabled)
-     },[props.disabled]);
-
-    //  useEffect(() => {
-    //     console.log("hello there", index)
-    //     console.log("mounted cur is", mounted.current)
-    // },[disabled, index]);
-
-    useEffect(() => {
-        console.log("mounted is...", mounted)
-        console.log("mounted cur is", mounted.current)
-    },[mounted]);
-
-
+    // this is to focus the 1st input box when its enabled
     const inputFocus = (input) => {
         if(index === 0 && inputVal === null){
-            console.log("inputval is",inputVal)
             return (input && input.focus())
         }else{
             return null
         }
-
     }
+
+    useEffect(() => {
+        setDisabled(props.disabled);
+      },[props.disabled]);
 
     return(
         <>
-            <TextField class="inputBox"
+            <TextField className="inputBox"
+                id = {"field" + props.value}
                 disabled={disabled} 
                 // defaultValue={props.index} 
-                inputProps={{ className:clsx(setBackground(), classes.uppercase) , maxLength: maxLength }}
+                inputProps={{ className:clsx(classes.default, classes.uppercase, classes.normalBorder, setBackground()) , maxLength: maxLength }}
                 onChange={handleInputChange}
+                onKeyDown={handleBackspace}
                 // inputRef={input => input && input.focus() && index === 0}
                 inputRef={inputFocus}
             />

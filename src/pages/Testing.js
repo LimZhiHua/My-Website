@@ -7,14 +7,28 @@ import { TextField, Grid} from '@material-ui/core' ;
 import CharacterTextField from '../components/CharacterTextField';
 import {baseURL} from "../urls";
 
+import wordList from "../files/wordList.txt"
 // Gonna try to make wordle
 // Is a 6x6 grid.
 function Testing() {
 
     const [testGet, setGet] = useState(null);
+
     const [curRow, setCurRow] = useState(0);
-    const [answer, setAnswer] = useState('pain');
+
+
+    const [wordSet, setWordSet]= useState();
+
+    const [inputWord, setInputWord] = useState("");
+    const [validWord, setValidWord] = useState(true);
+    const [success, setSuccess] = useState(false);
+
     const usl  = baseURL +  "/testAPI"
+    
+    
+    // using state cause eventually I intend
+    const answer = "tired"
+
     const getAPI = async () => {
         const getURL = usl + '/getReq';
         console.log("getURl is", getURL)
@@ -51,7 +65,7 @@ function Testing() {
 
     
     const rows = 7;
-    const cols = 4;
+    const cols = 5;
     // 50 is just the size of each cell
     const width = 50 * cols;
 
@@ -73,44 +87,100 @@ function Testing() {
 
     //TODO: make this check f it is an acutal word
     const checkWord = (input) => {
-        return true;
+
+        const word = getSubmittedWord();
+        if(word.toUpperCase() === answer.toUpperCase()){
+            // well, he got the answer.
+            setSuccess(true)
+            return true
+        }
+        const valid = (wordSet.has(word))
+        setValidWord(valid)
+        return valid
+         
     }
 
     // When I press enter, I need to 
     const nextRow = (e) => {
         e.preventDefault();
-        if(checkWord){
+        if(checkWord()){
             setCurRow(curRow + 1)
-            console.log("currow is", curRow)
         }
-        //e.preventDefault();
-
     }
 
     const reset = () => {
         setCurRow(0)
+        setSuccess(false)
+        setValidWord(true)
     }
+
+ 
+    const generateWordSet = async () => {
+        const response =await fetch(wordList);
+        const words = new Set((await response.text()).split("\n").map(item=>item.trim()));
+        setWordSet(words)
+    }
+
+    const getSubmittedWord = () => {
+        const startInd = (curRow * cols);
+        let word = '';
+        for (let i = startInd; i < startInd + cols; i++){
+            word += document.getElementById("field" + i).value
+        }
+        setInputWord(word);
+        return word
+    }
+
+    useEffect(() => {
+        generateWordSet();
+      },[]);
+
+    useEffect(() => {
+    generateWordSet();
+    },[inputWord]);
 
     const gridItems = values.map(value => {
         return (
-            <Grid item xs={(12/cols)}  className='gridItem'>
-                <CharacterTextField disabled={calculateDisabled(value)} submitted={calculateSubmitted(value)} value={value} answer ={answer} index={value%cols}/>
+            <Grid item xs={(12/cols)}  className='gridItem' key={value}>
+                <CharacterTextField disabled={calculateDisabled(value) || success} submitted={calculateSubmitted(value)} value={value} answer ={answer} index={value%cols}/>
             </Grid>
         )
     })
+
+    const errorMessage = () => {
+        if(validWord){
+            return <></>
+        }else{
+            return <h3 className="red centerButtonContainer">{inputWord} is not a valid word</h3>
+        }
+    }
+
+    const successMessage = () => {
+        if(success){
+            return <h3 className="green centerButtonContainer">Congrats!</h3>
+        }else{
+            return <></>
+        }
+    }
+
     return (
         <div className='horizontalBlock '> 
         <form>
+            <div className="centerButtonContainer">
+                <h2>Budget Wordle</h2>
+            </div>
             <div style={{width: width + 'px'}}>
                 <Grid container spacing={1} className='gridContainer'>
                     {gridItems}
                 </Grid>
             </div>
-            <button onClick={nextRow}>this is a button</button>
+            {errorMessage()}
+            {successMessage()}
+            <div className="centerButtonContainer">
+                <button onClick={nextRow}>Submit</button>
+            </div>
         </form>
-        <button onClick={reset}>reset button</button>
-        <p>{(curRow * cols)}</p>
-        <p>{(curRow * cols) + cols}</p>
+        {/* <button onClick={reset}>reset button</button> */}
         </div>     
     );
   }
