@@ -39,6 +39,23 @@ function AboutMe() {
       </div>
         </div>
     );
+    
+  //  return(
+  //    <table>
+  //      <tr>
+  //        <th>
+  //          This Cell contains an image
+  //          <img src="me.jpg" alt="Apple"/>
+  //        </th>
+  //        <th>
+  //          dfd
+  //        </th>
+  //      </tr>
+  //      <tr>
+
+  //      </tr>
+  //    </table>
+  //  )
   }
 
   export default AboutMe
