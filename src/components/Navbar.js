@@ -41,22 +41,22 @@ function Navbar(){
                     <ul className={click? "nav-menu active" : "nav-menu"}>
                         <li className="nav-item">
                             <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                                      About Me<i class="fas fa-user-tie fa-fw"></i>
+                                      About Me<i className="fas fa-user-tie fa-fw"></i>
                             </Link>                       
                         </li>
                         <li className="nav-item">
                             <Link to="/Resume" className="nav-links" onClick={closeMobileMenu}>
-                                Resume <i class="fas fa-file fa-fw"></i>
+                                Resume <i className="fas fa-file fa-fw"></i>
                             </Link>                       
                         </li>
                         <li className="nav-item">
                             <Link to="/Excel" className="nav-links" onClick={closeMobileMenu}>
-                                Skills<i class="fas fa-laptop-code fa-fw"></i> 
+                                Skills<i className="fas fa-laptop-code fa-fw"></i> 
                             </Link>                       
                         </li>
                         <li className="nav-item">
                             <Link to="/Contact" className="nav-links" onClick={closeMobileMenu}>
-                                Contact Details <i class="fas fa-phone fa-fw"></i>
+                                Contact Details <i className="fas fa-phone fa-fw"></i>
 
 
                             </Link>                       
